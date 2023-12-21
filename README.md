@@ -1,8 +1,7 @@
 
-#  Inception-42
+#  node-docker
 
-
-##  Installing Docker on Ubuntu.
+###  Installing Docker on Ubuntu.
 
 - Update the APT package index
 ```bash
@@ -54,9 +53,9 @@ sudo  systemctl  enable  docker
 sudo  systemctl  enable  docker
 ```
 
+##
 
-
-##  Install Node.js in the Docker image.
+###  Install Node.js in the Docker image.
 
 - Create a new directory for your project
 ```bash
@@ -94,3 +93,28 @@ EXPOSE 3000
 # Command to run the application
 CMD ["npm", "start"]
 ```
+
+##
+
+###  Build image and run container
+
+###
+- Build the Docker Image
+```bash
+docker build -t express-docker-image .
+```
+
+###
+- Run a Docker Container
+```bash
+docker run -p 3000:3000 --name express-docker-container express-docker-image
+```
+
+###
+- Stop a Docker container
+```bash
+docker ps
+docker stop express-docker-container # or CONTAINER_ID
+docker rm express-docker-container # or CONTAINER_ID
+```
+
